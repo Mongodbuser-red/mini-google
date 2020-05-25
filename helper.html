@@ -1,0 +1,329 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>Droid-R </title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href='https://fonts.googleapis.com/css?family=Aguafina Script|Akronim|Aldrich|Alegreya|Alex Brush|Allerta Stencil|Allura|Almendra SC|Amethysta|Annie Use Your Telescope|Arbutus|Arizonia|Asset|Astloch|Bad Script|Barrio|Bellefair|Berkshire Swash|Bilbo|BioRhyme Expanded|Bonbon|Butcherman|Butterfly Kids|Caveat|Charmonman|Cinzel Decorative|Codystar|Crafty Girls|Dawning of a New Day|Faster One|Frijole|Geostar|Give You Glory|Hi Melody|Italianno|Jacques Francois Shadow|KhandMajor Mono Display|Meddon|Miltonian|Monofett|Monoton|Mystery Quest|Nosifer|Orbitron|Petit Formal Script|Sacramento|Shadows Into Light Two|Snowburst One|Dancing Script|Vibur|Raleway' rel='stylesheet'>
+    </head>
+    <body>
+	<style>
+
+body 
+{
+    background-color:black;
+    color:white;
+}
+h1
+{
+    color:white;
+    font-family:Annie Use Your Telescope;
+}
+#ca
+{
+    background-color:#c3c3c3;
+    border:.2vw white double;
+}
+#ans
+{
+    font-size:35px;
+    font-style:italic;
+    outline:none;
+	background-color: #009688;
+    font-family:Allerta Stencil;
+}
+i
+{
+    color:white;
+    font-size:35px;
+}
+#no
+{
+    width:100%;
+	align:center;
+    height:11vw;
+    background-color:#555555;
+    border-radius:34px;
+    padding:10px;
+    box-sizing:border-box;
+    outline:none;
+}
+#bb
+{
+
+    font-family:Times New Roman;
+    background:#009688;
+    color:white;
+	align:center;
+	width:50%;
+	height:60px;
+	}
+#k
+{
+    animation:a 3s ease-in-out 1s infinite  ;
+}
+@keyframes a{
+            0%{
+                transform:rotate(0deg);
+
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(360deg);
+        }
+}
+i
+{
+
+  
+    font-size:6vw;
+    text-align:center;
+    font-family:Allerta Stencil;
+
+}
+	</style>
+	<script language="javascript">
+var nm=prompt("Droid-R is asking your name?");
+while(nm == null || nm == "") 
+{
+nm = prompt("What is your name?")
+}
+alert("Make sure volume is turned on.And ignore console error due to API")
+var text;
+
+window.onload=function(){
+var cn=0;
+var q='';
+var tk=new Date()
+var tt=tk.getHours();
+if(tt<=9)
+{
+
+text="Hello " +nm+ " Good Morning.";
+   pr(text)
+
+
+}
+else if(tt>9 && tt<=15)
+{
+    
+    text="Hello " +nm+ " Good Noon." ;
+    pr(text);
+
+}
+else if(tt>=16 && tt<=17)
+{
+    
+    text="Hello " +nm+ " Good afternoon." ;
+    pr(text);
+    
+}
+else if(tt>=18 && tt<=21)
+{
+    
+    text="Hello " +nm+ " Good evening." ;
+    pr(text);
+    
+}
+else if(tt>=22)
+{
+    
+    text="Hello " +nm+ " Good Night." ;
+    pr(text);
+}
+
+}
+
+function ro()
+{
+    document.getElementsByTagName("i")[0].style.display="none";
+    
+    var com=no.value;
+    com=com+" ";
+    var len=com.length;
+
+    var wo=[];
+    var w="";var q=0;
+    for(var i=0;i<len;i++)
+    {
+      
+        if(com.charAt(i)==" "||com.charAt(i)=="?")
+        { 
+        
+            wo[q]=w;
+            
+            w="";
+            q++;
+        }
+        else
+        {
+              w=w+com.charAt(i);
+        }
+    }
+    var flag=0;
+    for(var i=0;i<q;i++)
+    {
+        
+        if(wo[i]==="date" || wo[i]==="Date")
+        {
+          var today = new Date(); var dd = today.getDate(); 
+          var mm = today.getMonth()+1; 
+          var yyyy = today.getFullYear(); 
+          if(dd<10) 
+          { dd = '0'+dd }
+          if(mm<10) 
+          { mm = '0'+mm } 
+          today = dd + '/' + mm + '/' + yyyy; 
+        flag=2; document.getElementById('ans').innerHTML="Today's date is " +today;
+        text="Today's date is " +today;
+        responsiveVoice.speak(text);
+    }
+    else if(wo[i]==="time" || wo[i]==="Time")
+    {
+       flag=2;
+       var time= new Date();
+       var t=time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+       document.getElementById('ans').innerHTML="Current Time is " +t;
+       text="Current Time is " +t;
+       responsiveVoice.speak(text);
+    }
+    else if(wo[i]==="Hello" || wo[i]==="hello"||wo[i]==="Hi"||wo[i]==="hi"||wo[i]==="name"||wo[i]==="Name"||wo[i]==="HELLO"||wo[i]==="NAME")
+    {   
+    flag=2; document.getElementById('ans').innerHTML="Hello "+nm+" my name is Driod-R!.";
+    text="Hello "+nm+" my name is Driod-R";
+    responsiveVoice.speak(text);
+    
+    }
+    else if(wo[i].charAt(0)=='0'||wo[i].charAt(0)=='1'||wo[i].charAt(0)=='2'||wo[i].charAt(0)=='3'||wo[i].charAt(0)=='4'||wo[i].charAt(0)=='5'|| wo[i].charAt(0)=='6'||
+wo[i].charAt(0)=='7'||wo[i].charAt(0)=='8'||wo[i].charAt(0)=='9')
+{
+    var l=wo[i].length;
+    
+    for(var j=0;j<l;j++)
+    {
+        if(wo[i].charAt(j)=='+'||wo[i].charAt(j)=='-'||wo[i].charAt(j)=='*'||wo[i].charAt(j)=='/'||wo[i].charAt(j)=='%'||
+        wo[i].charAt(j)=='^')
+        {
+            cn=j;
+            q=wo[i].charAt(j);
+        }
+    }
+    var fp=wo[i].substring(0,cn);
+    var lp=wo[i].substring(cn+1,l);
+    switch(q)
+    {
+        case '+':
+        {
+            var res=parseFloat(lp)+parseFloat(fp);
+            break;
+        }
+        case '-':
+        {
+            var res=parseFloat(fp)-parseFloat(lp);
+            
+            break;
+        }
+        case '*':
+        {
+            var res=parseFloat(lp)*parseFloat(fp);
+            break;
+        }
+        case '^':
+        {
+            var res=parseFloat(fp)^parseFloat(lp);;
+            break;
+        }
+        case '/':
+        {
+            var res=parseFloat(fp)/parseFloat(lp);
+            break;
+        }
+        case '%':
+        {
+            var res=parseFloat(fp)%parseFloat(lp);
+            break;
+        }
+        default:
+           break;
+    }
+    document.getElementById('ans').innerHTML="Result :" +res;
+    text="Result :" +res;
+    responsiveVoice.speak(text);
+    flag=2;
+    
+}
+else if(wo[i]==="you")
+{
+    text="I am fine. "+nm+" Tell me how can I help you?";
+    document.getElementById('ans').innerHTML=text;
+    flag=2;
+    responsiveVoice.speak(text);
+}
+else if(wo[i]==="morning"||wo[i]==="Morning"||wo[i]==="noon"||wo[i]==="Noon"||wo[i]==="evening"||wo[i]==="Evening"||wo[i]==="Night"||wo[i]==="night"||wo[i]==="afternoon"||wo[i]==="Afternoon")
+{
+    text=nm+" Tell me how can I help you?";
+    document.getElementById('ans').innerHTML=text;
+    flag=2;
+    responsiveVoice.speak(text);
+}
+else if(wo[i]==="Driod"||wo[i]==="Driod")
+{
+    text=nm+" Tell me how can I help you?";
+    document.getElementById('ans').innerHTML=text;
+    flag=2;
+    responsiveVoice.speak(text);
+}
+    else
+    {
+         if(flag==0)
+         flag=1; 
+         
+    }
+    
+}
+if(flag==1)
+{
+    
+    var str="http://www.google.com/search?hl=en&source=hp&q=" + com + "&aq=f&oq=&aqi=";
+var replaced=str.replace(" ","+");
+window.location.replace(replaced);
+}
+
+}
+function pr(txt)
+{
+    var word = txt.split("");
+var i = 0;
+var interval = setInterval(writeText, 100 );
+function writeText() {
+    var p = document.getElementsByTagName("i")[0];
+    if (i < word.length) {
+        p.innerHTML += word[i];
+        i++;
+    } else {
+        clearInterval(interval);
+         
+  
+  } 
+}
+}
+console.log = function() {}
+	</script>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+   <h1 align="center">Driod-R By Reboot13</h1>
+       <input type=text id="no" placeholder="Enter command" style="font-size:20px" size="20">
+       <p align="center">
+       <button onclick="ro()" id="bb">Start Processing Command..</button></p>
+       <i align="center"></i>
+       <div id="ca" align="center">
+       <p id="ans" align="center">Result here...</p>
+	   <div>
+	   <center>
+	   <a href="https://instagram.com/krutik013">Instagram</a></br>
+	   <a href="http://t.me/world_bins1">T.me/world_bins1</a>
+	   </center>
+	   </div>
+    </body>
+</html>
