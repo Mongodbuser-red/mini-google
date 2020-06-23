@@ -1,2 +1,2 @@
-# virtual-assistant
-A small google assistant
+# Mini Google
+A small google assistant powered by JavaScript
