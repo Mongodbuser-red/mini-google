@@ -10,11 +10,8 @@
     <body>
 
 	<script language="javascript">
-var nm=prompt("Mini Google is asking your name?");
-while(nm == null || nm == "") 
-{
-nm = prompt("What is your name?")
-}
+var nm;
+nm = hi;
 alert("Make sure volume is turned on.And ignore console error due to API")
 var text;
 
@@ -26,7 +23,7 @@ var tt=tk.getHours();
 if(tt<=9)
 {
 
-text="Hello " +nm+ " Good Morning.";
+text="Hello " + " Good Morning.";
    pr(text)
 
 
@@ -34,28 +31,28 @@ text="Hello " +nm+ " Good Morning.";
 else if(tt>9 && tt<=15)
 {
     
-    text="Hello " +nm+ " Good Noon." ;
+    text="Hello " + " Good Noon." ;
     pr(text);
 
 }
 else if(tt>=16 && tt<=17)
 {
     
-    text="Hello " +nm+ " Good afternoon." ;
+    text="Hello " + " Good afternoon." ;
     pr(text);
     
 }
 else if(tt>=18 && tt<=21)
 {
     
-    text="Hello " +nm+ " Good evening." ;
+    text="Hello " + " Good evening." ;
     pr(text);
     
 }
 else if(tt>=22)
 {
     
-    text="Hello " +nm+ " Good Night." ;
+    text="Hello " + " Good Night." ;
     pr(text);
 }
 
@@ -117,7 +114,7 @@ function ro()
     else if(wo[i]==="Hello" || wo[i]==="hello"||wo[i]==="Hi"||wo[i]==="hi"||wo[i]==="name"||wo[i]==="Name"||wo[i]==="HELLO"||wo[i]==="NAME")
     {   
     flag=2; document.getElementById('ans').innerHTML="Hello "+nm+" my name is Mini Google";
-    text="Hello "+nm+" my name is Mini Google";
+    text="Hello "+" my name is Mini Google";
     responsiveVoice.speak(text);
     
     }
@@ -181,21 +178,21 @@ wo[i].charAt(0)=='7'||wo[i].charAt(0)=='8'||wo[i].charAt(0)=='9')
 }
 else if(wo[i]==="you")
 {
-    text="I am fine. "+nm+" Tell me how can I help you?";
+    text="I am fine. "+" Tell me how can I help you?";
     document.getElementById('ans').innerHTML=text;
     flag=2;
     responsiveVoice.speak(text);
 }
 else if(wo[i]==="morning"||wo[i]==="Morning"||wo[i]==="noon"||wo[i]==="Noon"||wo[i]==="evening"||wo[i]==="Evening"||wo[i]==="Night"||wo[i]==="night"||wo[i]==="afternoon"||wo[i]==="Afternoon")
 {
-    text=nm+" Tell me how can I help you?";
+    text=" Tell me how can I help you?";
     document.getElementById('ans').innerHTML=text;
     flag=2;
     responsiveVoice.speak(text);
 }
 else if(wo[i]==="Mini Google"||wo[i]==="Mini Google")
 {
-    text=nm+" Tell me how can I help you?";
+    text=" Tell me how can I help you?";
     document.getElementById('ans').innerHTML=text;
     flag=2;
     responsiveVoice.speak(text);
