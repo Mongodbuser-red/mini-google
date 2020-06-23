@@ -1,91 +1,16 @@
  <!DOCTYPE html>
 <html>
     <head>
-        <title>Droid-R </title>
+        <title>Mini Google- Reboot13 </title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href='https://fonts.googleapis.com/css?family=Aguafina Script|Akronim|Aldrich|Alegreya|Alex Brush|Allerta Stencil|Allura|Almendra SC|Amethysta|Annie Use Your Telescope|Arbutus|Arizonia|Asset|Astloch|Bad Script|Barrio|Bellefair|Berkshire Swash|Bilbo|BioRhyme Expanded|Bonbon|Butcherman|Butterfly Kids|Caveat|Charmonman|Cinzel Decorative|Codystar|Crafty Girls|Dawning of a New Day|Faster One|Frijole|Geostar|Give You Glory|Hi Melody|Italianno|Jacques Francois Shadow|KhandMajor Mono Display|Meddon|Miltonian|Monofett|Monoton|Mystery Quest|Nosifer|Orbitron|Petit Formal Script|Sacramento|Shadows Into Light Two|Snowburst One|Dancing Script|Vibur|Raleway' rel='stylesheet'>
-    </head>
+    <link rel="stylesheet" type="text/css" href="view.css">
+</head>
     <body>
-	<style>
 
-body 
-{
-    background-color:black;
-    color:white;
-}
-h1
-{
-    color:white;
-    font-family:Annie Use Your Telescope;
-}
-#ca
-{
-    background-color:#c3c3c3;
-    border:.2vw white double;
-}
-#ans
-{
-    font-size:35px;
-    font-style:italic;
-    outline:none;
-	background-color: #009688;
-    font-family:Allerta Stencil;
-}
-i
-{
-    color:white;
-    font-size:35px;
-}
-#no
-{
-    width:100%;
-	align:center;
-    height:11vw;
-    background-color:#555555;
-    border-radius:34px;
-    padding:10px;
-    box-sizing:border-box;
-    outline:none;
-}
-#bb
-{
-
-    font-family:Times New Roman;
-    background:#009688;
-    color:white;
-	align:center;
-	width:50%;
-	height:60px;
-	}
-#k
-{
-    animation:a 3s ease-in-out 1s infinite  ;
-}
-@keyframes a{
-            0%{
-                transform:rotate(0deg);
-
-            }
-            50%{
-                transform: rotate(180deg);
-            }
-            100%{
-                transform: rotate(360deg);
-        }
-}
-i
-{
-
-  
-    font-size:6vw;
-    text-align:center;
-    font-family:Allerta Stencil;
-
-}
-	</style>
 	<script language="javascript">
-var nm=prompt("Droid-R is asking your name?");
+var nm=prompt("Mini Google is asking your name?");
 while(nm == null || nm == "") 
 {
 nm = prompt("What is your name?")
@@ -192,7 +117,7 @@ function ro()
     else if(wo[i]==="Hello" || wo[i]==="hello"||wo[i]==="Hi"||wo[i]==="hi"||wo[i]==="name"||wo[i]==="Name"||wo[i]==="HELLO"||wo[i]==="NAME")
     {   
     flag=2; document.getElementById('ans').innerHTML="Hello "+nm+" my name is Driod-R!.";
-    text="Hello "+nm+" my name is Driod-R";
+    text="Hello "+nm+" my name is Mini Google";
     responsiveVoice.speak(text);
     
     }
@@ -268,7 +193,7 @@ else if(wo[i]==="morning"||wo[i]==="Morning"||wo[i]==="noon"||wo[i]==="Noon"||wo
     flag=2;
     responsiveVoice.speak(text);
 }
-else if(wo[i]==="Driod"||wo[i]==="Driod")
+else if(wo[i]==="Mini Google"||wo[i]==="Mini Google")
 {
     text=nm+" Tell me how can I help you?";
     document.getElementById('ans').innerHTML=text;
@@ -312,18 +237,39 @@ function writeText() {
 console.log = function() {}
 	</script>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-   <h1 align="center">Driod-R By Reboot13</h1>
-       <input type=text id="no" placeholder="Enter command" style="font-size:20px" size="20">
+   <div class="header">
+        	Mini <img src="https://img.icons8.com/color/48/000000/google-logo.png"/>oogle</div>
+    <center>  
+       <input type=text id="no" placeholder="">
        <p align="center">
-       <button onclick="ro()" id="bb">Start Processing Command..</button></p>
+       <button onclick="ro()" class="submit">Search</button></p>
        <i align="center"></i>
-       <div id="ca" align="center">
+       <div id="ans" align="center">
        <p id="ans" align="center">Result here...</p>
-	   <div>
-	   <center>
-	   <a href="https://instagram.com/krutik013">Instagram</a></br>
-	   <a href="http://t.me/world_bins1">T.me/world_bins1</a>
-	   </center>
+	   <div><center>
 	   </div>
+	       </div>
+
+
+
+        <footer class="footer">
+  <div class="footer-left col-md-4 col-sm-6">
+    <p class="about">
+      <span> Github Repo</span>
+      <a href="https://github.com/reboot13-git/mini-google"> https://github.com/reboot13-git/mini-google</a>
+    </p>&nbsp;<br>
+    <div class="icons">
+      <a href="instagram.com/krutik013"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+      <a href="mailto:rautkrutik136@gmail.com"><img src="https://img.icons8.com/color/48/000000/google-logo.png"/></a>
+      <a href="twitter.com/krutik013"><img src="https://img.icons8.com/color/48/000000/twitter.png"/></a>
+     
+    </div>
+  </div>
+
+  <div class="footer-right col-md-4 col-sm-6">
+    <h2> Reboot13<span> -Git</span></h2>
+    <p class="name"> Copyright &copy;<script>document.write(new Date().getFullYear());</script><a href=" https://github.com/reboot13-git"> @reboot13-git</a></p>
+  </div>
+</footer>
     </body>
 </html>
