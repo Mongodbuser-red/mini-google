@@ -5,7 +5,7 @@ A small google assistant powered by JavaScript
 ## Mini Google
 Simple search engine 
 
-Simple Calculate
+Simple Calculater
 
 Current time checker
 
