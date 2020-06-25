@@ -25,10 +25,17 @@ else if(tt>=14 && tt<=16)
     pr(text);
     responsiveVoice.speak(text);
 }
-else if(tt>=16 && tt<=21)
+else if(tt>=16 && tt<=19)
 {
     
     text="Good evening." ;
+    pr(text);
+    responsiveVoice.speak(text);
+}
+else if(tt>=19 && tt<=22)
+{
+    
+    text="Raat Ho gayi Soja bsdk" ;
     pr(text);
     responsiveVoice.speak(text);
 }
