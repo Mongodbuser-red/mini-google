@@ -149,7 +149,7 @@ function getWeather(latitude, longitude){
     .then(data => {
       const { main, name, sys, weather } = data;
          document.getElementById('ans').innerHTML = "Current Weather in"+name+"<br>"+"is"+main+weather; 
-text="Current Weather in"+name+"<br>"+"is"+main+weather; 
+text="Current Weather in"+name+"is"+main+weather; 
  responsiveVoice.speak(text);
         })
 } 
