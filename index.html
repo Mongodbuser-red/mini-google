@@ -10,11 +10,6 @@
     <body>
 
 	<script language="javascript">
-var nm;
-nm = hi;
-alert("Make sure volume is turned on.And ignore console error due to API")
-var text;
-
 window.onload=function(){
 var cn=0;
 var q='';
@@ -23,7 +18,7 @@ var tt=tk.getHours();
 if(tt<=9)
 {
 
-text="Hello " + " Good Morning.";
+text="Hello  Good Morning.";
    pr(text)
 
 
@@ -31,28 +26,28 @@ text="Hello " + " Good Morning.";
 else if(tt>9 && tt<=15)
 {
     
-    text="Hello " + " Good Noon." ;
+    text="Hello  Good Noon." ;
     pr(text);
 
 }
 else if(tt>=16 && tt<=17)
 {
     
-    text="Hello " + " Good afternoon." ;
+    text="Hello  Good afternoon." ;
     pr(text);
     
 }
 else if(tt>=18 && tt<=21)
 {
     
-    text="Hello " + " Good evening." ;
+    text="Hello  Good evening." ;
     pr(text);
     
 }
 else if(tt>=22)
 {
     
-    text="Hello " + " Good Night." ;
+    text="Hello  Good Night." ;
     pr(text);
 }
 
@@ -102,13 +97,29 @@ function ro()
         text="Today's date is " +today;
         responsiveVoice.speak(text);
     }
-    else if(wo[i]==="time" || wo[i]==="Time")
+     else if(wo[i]==="time" || wo[i]==="Time")
     {
        flag=2;
        var time= new Date();
        var t=time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
        document.getElementById('ans').innerHTML="Current Time is " +t;
        text="Current Time is " +t;
+       responsiveVoice.speak(text);
+    }
+    else if(wo[i]==="Day" || wo[i]==="Day")
+    {
+       flag=2;
+       var day= new Date();
+       var weekday = new Array(7);
+       weekday[0] = "Sunday";
+       weekday[1] = "Monday";
+       weekday[2] = "Tuesday";
+       weekday[3] = "Wednesday";
+       weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+      var day = weekday[d.getDay()];
+       text="It's " +day;
        responsiveVoice.speak(text);
     }
     else if(wo[i]==="Hello" || wo[i]==="hello"||wo[i]==="Hi"||wo[i]==="hi"||wo[i]==="name"||wo[i]==="Name"||wo[i]==="HELLO"||wo[i]==="NAME")
