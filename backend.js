@@ -155,7 +155,7 @@ function getWeather(latitude, longitude){
             weather.temperature.value = Math.floor(data.main.temp - KELVIN);  
             weather.city = data.name;  
         })  
-  document.getElementById('ans').innerHTML ="Current Weather in"+${weather.city}+"is"+${weather.temperature.value}+"°C";
+  document.getElementById('ans').innerHTML ="Current Weather in"+weather.city+"is"+weather.temperature.value+"°C";
     responsiveVoice.speak(text);
     }
                 
