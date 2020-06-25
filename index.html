@@ -125,7 +125,7 @@ document.getElementById('ans').innerHTML="It's " +tday;
        responsiveVoice.speak(text);
     }
 
-    else if(wo[i]==="Hello" || wo[i]==="hello"||wo[i]==="Hi"||wo[i]==="hi"||wo[i]==="name"||wo[i]==="Name"||wo[i]==="HELLO"||wo[i]==="NAME")
+    else if(wo[i]==="name"||wo[i]==="Name"||wo[i]==="Your name"||wo[i]==="NAME")
     {   
     flag=2; document.getElementById('ans').innerHTML="Hello  my name is Mini Google";
     text="Hello  my name is Mini Google";
@@ -204,9 +204,9 @@ else if(wo[i]==="morning"||wo[i]==="Morning"||wo[i]==="noon"||wo[i]==="Noon"||wo
     flag=2;
     responsiveVoice.speak(text);
 }
-else if(wo[i]==="mini google"||wo[i]==="Mini Google"||wo[i]==="Mini google")
+else if(wo[i]==="Hello" || wo[i]==="hello"||wo[i]==="Hi"||wo[i]==="hi")
 {
-    text=" Yes Master can I help you?";
+    text=" Yes Master";
     document.getElementById('ans').innerHTML=text;
     flag=2;
     responsiveVoice.speak(text);
