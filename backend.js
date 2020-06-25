@@ -146,10 +146,12 @@ function getWeather(latitude, longitude){
       
     fetch(api)  
         .then(function(response){  
-            let data = response.json();  
-            return data;  
-       document.getElementById('ans').innerHTML = data;  
-       responsiveVoice.speak(data);
+           .then(data => {
+        console.log(data);
+        let temp = data.main.temp;
+        document.getElementById('ans').innerHTML = temp + "° F"+data.weather[0].main;
+      text="temp + "° F"+data.weather[0].main";
+responsiveVoice.speak(text);
         })
 } 
 
