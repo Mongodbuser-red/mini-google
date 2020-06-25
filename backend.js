@@ -120,8 +120,7 @@ else if(wo[i]==="weather" || wo[i]==="Weather"|| wo[i]==="Current Weather")
 weather.temperature = {  
     unit : "celsius"  
 }  
-  
-const KELVIN = 273;  
+   
   
 const key = "89ef8a05b6c964f4cab9e2f97f696c81";  
   
@@ -139,7 +138,7 @@ function setPosition(position){
 }  
   
 function showError(error){    
-    notificationElement.innerHTML = `<p> ${error.message} </p>`;  
+   document.getElementById('ans').innerHTML = `<p> ${error.message} </p>`;  
 }  
   
 function getWeather(latitude, longitude){  
