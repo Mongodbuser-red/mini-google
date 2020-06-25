@@ -145,13 +145,12 @@ function getWeather(latitude, longitude){
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;  
       
     fetch(api)  
-        .then(function(response){  
-           .then(data => {
-        console.log(data);
-        let temp = data.main.temp;
-        document.getElementById('ans').innerHTML = temp + "° F"+data.weather[0].main;
-      text="temp + "° F"+data.weather[0].main";
-responsiveVoice.speak(text);
+        .then(response => response.json())
+    .then(data => {
+      const { main, name, sys, weather } = data;
+         document.getElementById('ans').innerHTML = "Current Weather in"+name+"<br>"+"is"+main+weather; 
+text="Current Weather in"+name+"<br>"+"is"+main+weather; 
+ responsiveVoice.speak(text);
         })
 } 
 
