@@ -20,7 +20,7 @@ if(tt<=9)
 
 text="Hello  Good Morning.";
    pr(text)
-
+responsiveVoice.speak(text);
 
 }
 else if(tt>9 && tt<=15)
@@ -28,27 +28,28 @@ else if(tt>9 && tt<=15)
     
     text="Hello  Good Noon." ;
     pr(text);
-
+responsiveVoice.speak(text);
 }
 else if(tt>=16 && tt<=17)
 {
     
     text="Hello  Good afternoon." ;
     pr(text);
-    
+    responsiveVoice.speak(text);
 }
 else if(tt>=18 && tt<=21)
 {
     
     text="Hello  Good evening." ;
     pr(text);
-    
+    responsiveVoice.speak(text);
 }
 else if(tt>=22)
 {
     
     text="Hello  Good Night." ;
     pr(text);
+    responsiveVoice.speak(text);
 }
 
 }
@@ -119,13 +120,14 @@ function ro()
         weekday[5] = "Friday";
         weekday[6] = "Saturday";
       var dd = weekday[d.getDay()];
+document.getElementById('ans').innerHTML="Current Time is " +dd;
        text="It's " +dd;
        responsiveVoice.speak(text);
     }
     else if(wo[i]==="Hello" || wo[i]==="hello"||wo[i]==="Hi"||wo[i]==="hi"||wo[i]==="name"||wo[i]==="Name"||wo[i]==="HELLO"||wo[i]==="NAME")
     {   
     flag=2; document.getElementById('ans').innerHTML="Hello "+nm+" my name is Mini Google";
-    text="Hello "+" my name is Mini Google";
+    text="Hello  my name is Mini Google";
     responsiveVoice.speak(text);
     
     }
@@ -189,7 +191,7 @@ wo[i].charAt(0)=='7'||wo[i].charAt(0)=='8'||wo[i].charAt(0)=='9')
 }
 else if(wo[i]==="you")
 {
-    text="I am fine. "+" Tell me how can I help you?";
+    text="I am fine.  Tell me how can I help you?";
     document.getElementById('ans').innerHTML=text;
     flag=2;
     responsiveVoice.speak(text);
@@ -203,7 +205,7 @@ else if(wo[i]==="morning"||wo[i]==="Morning"||wo[i]==="noon"||wo[i]==="Noon"||wo
 }
 else if(wo[i]==="Mini Google"||wo[i]==="Mini Google")
 {
-    text=" Tell me how can I help you?";
+    text=" Yes Master can I help you?";
     document.getElementById('ans').innerHTML=text;
     flag=2;
     responsiveVoice.speak(text);
@@ -221,7 +223,7 @@ if(flag==1)
     
     var str="http://www.google.com/search?hl=en&source=hp&q=" + com + "&aq=f&oq=&aqi=";
 var replaced=str.replace(" ","+");
-window.location.replace(replaced);
+window.open(URL, '_blank');
 }
 
 }
