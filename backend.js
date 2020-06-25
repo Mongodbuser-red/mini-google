@@ -6,36 +6,36 @@ var tt=tk.getHours();
 if(tt<=9)
 {
 
-text="Hello  Good Morning.";
+text="Good Morning.";
    pr(text)
 responsiveVoice.speak(text);
 
 }
-else if(tt>9 && tt<=15)
+else if(tt>11 && tt<=14)
 {
     
-    text="Hello  Good Noon." ;
+    text="Good Noon." ;
     pr(text);
 responsiveVoice.speak(text);
 }
-else if(tt>=16 && tt<=17)
+else if(tt>=14 && tt<=16)
 {
     
-    text="Hello  Good afternoon." ;
+    text="Good afternoon." ;
     pr(text);
     responsiveVoice.speak(text);
 }
-else if(tt>=18 && tt<=21)
+else if(tt>=16 && tt<=21)
 {
     
-    text="Hello  Good evening." ;
+    text="Good evening." ;
     pr(text);
     responsiveVoice.speak(text);
 }
 else if(tt>=22)
 {
     
-    text="Hello  Good Night." ;
+    text="Good Night." ;
     pr(text);
     responsiveVoice.speak(text);
 }
@@ -145,15 +145,26 @@ function getWeather(latitude, longitude){
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;  
       
     fetch(api)  
-        .then(response => response.json())
-    .then(data => {
-      const { main, name, sys, weather } = data;
-         document.getElementById('ans').innerHTML = '"Current Weather in"+"&nbsp;"++name+"<br>"+"is"+main'; 
-text="Current Weather in"+name+"is"+main+weather; 
- responsiveVoice.speak(text);
-        })
-} 
-
+        .then(function(response){  
+            let data = response.json();  
+            return data;  
+        })  
+        .then(function(data){  
+            weather.temperature.value = Math.floor(data.main.temp - KELVIN);  
+            weather.description = data.weather[0].description;  
+            weather.city = data.name;  
+            weather.country = data.sys.country;  
+        })  
+        .then(function(){  
+            displayWeather();  
+        });  
+}  
+  
+function displayWeather(){   
+     document.getElementById('ans').innerHTML = `"Current Weather Status is"+"<br>"+${weather.temperature.value}°<span>C</span>+weather.description+${weather.city}, ${weather.country}';  
+     text="Current Weather Status is"+${weather.temperature.value}°<span>C</span>+weather.description+${weather.city}, ${weather.country};
+       responsiveVoice.speak(text);
+}  
     }
 
     else if(wo[i]==="name"||wo[i]==="Name"||wo[i]==="Your name"||wo[i]==="NAME")
