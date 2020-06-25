@@ -145,20 +145,15 @@ function getWeather(latitude, longitude){
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;  
       
     fetch(api)  
-        .then(function(response){  
-            let data = response.json();  
-            return data;  
-        })  
-        .then(function(data){  
-            weather.temperature.value = Math.floor(data.main.temp - KELVIN);  
-            weather.description = data.weather[0].description;  
-            weather.city = data.name;  
-            weather.country = data.sys.country;  
-        })    
-     document.getElementById('ans').innerHTML = `"Current Weather Status is"+"<br>"+${weather.temperature.value}°<span>C</span>+weather.description+${weather.city}, ${weather.country}';  
-     text="Current Weather Status is"+${weather.temperature.value}°<span>C</span>+weather.description+${weather.city}, ${weather.country};
-       responsiveVoice.speak(text);
-}  
+        then(response => response.json())	    
+           .then(data => {
+           console.log(data);	      
+          const { main, name, sys, weather } = data;
+          let temp = data.main.temp;	         
+           document.getElementById('ans').innerHTML = "Current Weather in"+name+"<br>"+"is"+main+weather; 
+           document.getElementById('ans').innerHTML = temp + "° F"+data.weather[0].main;	text="Current Weather in"+name+"<br>"+"is"+main+weather; 
+         text="temp + "° F"+data.weather[0].main";	 
+         responsiveVoice.speak(text);
     }
 
     else if(wo[i]==="name"||wo[i]==="Name"||wo[i]==="Your name"||wo[i]==="NAME")
