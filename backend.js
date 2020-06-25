@@ -161,7 +161,8 @@ function getWeather(latitude, longitude){
 }  
   
 function displayWeather(){ 
-  document.getElementById('ans').innerHTML ="Current Weather in"+weather.city+"is"+weather.temperature.value+"°C";
+  document.getElementById('ans').innerHTML ="Current Weather in"+"&nbsp;"+weather.city+"is"+"&nbsp;"+weather.temperature.value+"°C";
+text="Current Weather in"+weather.city+"is"+weather.temperature.value+"Degree celsius"
   responsiveVoice.speak(text);
 }
   
