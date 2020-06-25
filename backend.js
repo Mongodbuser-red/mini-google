@@ -154,13 +154,7 @@ function getWeather(latitude, longitude){
             weather.description = data.weather[0].description;  
             weather.city = data.name;  
             weather.country = data.sys.country;  
-        })  
-        .then(function(){  
-            displayWeather();  
-        });  
-}  
-  
-function displayWeather(){   
+        })    
      document.getElementById('ans').innerHTML = `"Current Weather Status is"+"<br>"+${weather.temperature.value}°<span>C</span>+weather.description+${weather.city}, ${weather.country}';  
      text="Current Weather Status is"+${weather.temperature.value}°<span>C</span>+weather.description+${weather.city}, ${weather.country};
        responsiveVoice.speak(text);
