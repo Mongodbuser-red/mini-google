@@ -140,8 +140,7 @@ const key = "89ef8a05b6c964f4cab9e2f97f696c81";
 if('geolocation' in navigator){  
     navigator.geolocation.getCurrentPosition(setPosition, showError);  
 }else{  
-    notificationElement.style.display = "block";  
-    document.getElementById('ans').innerHTML = "<p>Browser doesn't Support Geolocation</p>";  
+   document.getElementById('ans').innerHTML = "<p>Browser doesn't Support Geolocation</p>";  
 }  
   
 function setPosition(position){  
@@ -151,8 +150,7 @@ function setPosition(position){
     getWeather(latitude, longitude);  
 }  
   
-function showError(error){  
-    notificationElement.style.display = "block";  
+function showError(error){    
     notificationElement.innerHTML = `<p> ${error.message} </p>`;  
 }  
   
@@ -182,23 +180,7 @@ function displayWeather(){
     document.getElementById('ans').innerHTML = weather.description;  
     document.getElementById('ans').innerHTML = `${weather.city}, ${weather.country}`;  
 } 
-function celsiusToFahrenheit(temperature){  
-    return (temperature * 9/5) + 32;  
-}  
-  
-tempElement.addEventListener("click", function(){  
-    if(weather.temperature.value === undefined) return;  
-      
-    if(weather.temperature.unit == "celsius"){  
-        let fahrenheit = celsiusToFahrenheit(weather.temperature.value);  
-        fahrenheit = Math.floor(fahrenheit);  
-          
-        document.getElementById('ans').innerHTML = `${fahrenheit}°<span>F</span>`;  
-        weather.temperature.unit = "fahrenheit";  
-    }else{  
-        document.getElementById('ans').innerHTML = `${weather.temperature.value}°<span>C</span>`;  
-        weather.temperature.unit = "celsius"  
-    }  
+
 });  
     }
 
