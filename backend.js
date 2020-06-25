@@ -148,9 +148,8 @@ function getWeather(latitude, longitude){
         .then(function(response){  
             let data = response.json();  
             return data;  
-text="Weather " +data;
-document.getElementById('ans').innerHTML = text;  
-responsiveVoice.speak(text);
+       document.getElementById('ans').innerHTML = data;  
+       responsiveVoice.speak(data);
         })
 } 
 
