@@ -124,6 +124,21 @@ document.getElementById('ans').innerHTML="It's " +tday;
        text="It's " +tday;
        responsiveVoice.speak(text);
     }
+else if(wo[i]==="weather" || wo[i]==="Weather"|| wo[i]==="Current Weather")
+    {
+       flag=2;
+       var weather=prompt("Enter your City Name");
+      const apiKey="89ef8a05b6c964f4cab9e2f97f696c81";
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=+weather+&appid=${apiKey}&units=metric`;
+      fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const { main, name, sys, weather } = data;
+
+document.getElementById('ans').innerHTML="Current weather" +data;
+       text="Current weather" +data;
+       responsiveVoice.speak(text);
+    }
 
     else if(wo[i]==="name"||wo[i]==="Name"||wo[i]==="Your name"||wo[i]==="NAME")
     {   
