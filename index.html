@@ -206,7 +206,14 @@ else if(wo[i]==="morning"||wo[i]==="Morning"||wo[i]==="noon"||wo[i]==="Noon"||wo
 }
 else if(wo[i]==="Hello" || wo[i]==="hello"||wo[i]==="Hi"||wo[i]==="hi"||wo[i]==="hii"||wo[i]==="Hii"||wo[i]==="Hiii"||wo[i]==="hiii")
 {
-    text="Hello Master";
+    text="Hello,How can I help you";
+    document.getElementById('ans').innerHTML=text;
+    flag=2;
+    responsiveVoice.speak(text);
+}
+else if(wo[i]==="Reboot13" || wo[i]==="reboot13"||wo[i]==="reboot13-git"||wo[i]==="Reboot13-git")
+{
+    text="He's my creator,If you want to know more about him tap on google logo in footer below";
     document.getElementById('ans').innerHTML=text;
     flag=2;
     responsiveVoice.speak(text);
@@ -273,7 +280,7 @@ console.log = function() {}
     </p>&nbsp;<br>
     <div class="icons">
       <a href="instagram.com/krutik013"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
-      <a href="mailto:rautkrutik136@gmail.com"><img src="https://img.icons8.com/color/48/000000/google-logo.png"/></a>
+      <a href="https://www.google.com/search?q=reboot13"><img src="https://img.icons8.com/color/48/000000/google-logo.png"/></a>
       <a href="twitter.com/krutik013"><img src="https://img.icons8.com/color/48/000000/twitter.png"/></a>
      
     </div>
