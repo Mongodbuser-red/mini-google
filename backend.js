@@ -145,16 +145,15 @@ function getWeather(latitude, longitude){
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;  
       
     fetch(api)  
-        then(response => response.json())	    
-           .then(data => {
-           console.log(data);	      
+        .then(data => {
           const { main, name, sys, weather } = data;
-          let temp = data.main.temp;	         
-           document.getElementById('ans').innerHTML = "Current Weather in"+name+"<br>"+"is"+main+weather; 
-           document.getElementById('ans').innerHTML = temp + "° F"+data.weather[0].main;	text="Current Weather in"+name+"<br>"+"is"+main+weather; 
-         text="temp + "° F"+data.weather[0].main";	 
-         responsiveVoice.speak(text);
+         document.getElementById('ans').innerHTML = "Current Weather in"+name+"<br>"+"is"+main+weather; 	        
+         text="Current Weather in"+name+"<br>"+"is"+main+weather; 
+ responsiveVoice.speak(text);	
+        })	        
+} 	
     }
+                
 
     else if(wo[i]==="name"||wo[i]==="Name"||wo[i]==="Your name"||wo[i]==="NAME")
     {   
