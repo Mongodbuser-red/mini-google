@@ -175,13 +175,11 @@ function getWeather(latitude, longitude){
 }  
   
 function displayWeather(){  
-   document.getElementById('ans').innerHTML = `<img src="icons/${weather.iconId}.png"/>`;  
    document.getElementById('ans').innerHTML = `${weather.temperature.value}°<span>C</span>`;  
     document.getElementById('ans').innerHTML = weather.description;  
     document.getElementById('ans').innerHTML = `${weather.city}, ${weather.country}`;  
 } 
 
-});  
     }
 
     else if(wo[i]==="name"||wo[i]==="Name"||wo[i]==="Your name"||wo[i]==="NAME")
