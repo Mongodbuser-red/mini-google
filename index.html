@@ -182,7 +182,24 @@ function displayWeather(){
     document.getElementById('ans').innerHTML = weather.description;  
     document.getElementById('ans').innerHTML = `${weather.city}, ${weather.country}`;  
 } 
-
+function celsiusToFahrenheit(temperature){  
+    return (temperature * 9/5) + 32;  
+}  
+  
+tempElement.addEventListener("click", function(){  
+    if(weather.temperature.value === undefined) return;  
+      
+    if(weather.temperature.unit == "celsius"){  
+        let fahrenheit = celsiusToFahrenheit(weather.temperature.value);  
+        fahrenheit = Math.floor(fahrenheit);  
+          
+        document.getElementById('ans').innerHTML = `${fahrenheit}°<span>F</span>`;  
+        weather.temperature.unit = "fahrenheit";  
+    }else{  
+        document.getElementById('ans').innerHTML = `${weather.temperature.value}°<span>C</span>`;  
+        weather.temperature.unit = "celsius"  
+    }  
+});  
     }
 
     else if(wo[i]==="name"||wo[i]==="Name"||wo[i]==="Your name"||wo[i]==="NAME")
