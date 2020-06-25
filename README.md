@@ -12,8 +12,10 @@ Current time checker
 Date checker
 
 ### To do List
-Weather Api integration
-Custom and Random Response
+- [x] Weather Api integration 
+
+
+- [ ] Custom and Random Response
 
 #### Telegram
 [World Codes](https://t.me/world_codes)
