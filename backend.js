@@ -115,11 +115,13 @@ document.getElementById('ans').innerHTML="It's " +tday;
 else if(wo[i]==="weather" || wo[i]==="Weather"|| wo[i]==="Current Weather")
     {
        flag=2;
-       const weather = {};  
+      const weather = {};  
   
 weather.temperature = {  
     unit : "celsius"  
 }  
+  
+const KELVIN = 273;  
    
   
 const key = "89ef8a05b6c964f4cab9e2f97f696c81";  
@@ -145,13 +147,16 @@ function getWeather(latitude, longitude){
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;  
       
     fetch(api)  
-        .then(data => {
-        const { main, name, sys, weather } = data;
-         document.getElementById('ans').innerHTML = "Current Weather in"+name+"<br>"+"is"+main+"°C"; 	        
-         text="Current Weather in"+name+"is"+main+"°C"; 
- responsiveVoice.speak(text);	
-        })	        
-} 	
+         .then(function(response){  
+            let data = response.json();  
+            return data;  
+        }) 
+.then(function(data){  
+            weather.temperature.value = Math.floor(data.main.temp - KELVIN);  
+            weather.city = data.name;  
+        })  
+  document.getElementById('ans').innerHTML ="Current Weather in"+${weather.city}+"is"+${weather.temperature.value}+"°C";
+    responsiveVoice.speak(text);
     }
                 
 
