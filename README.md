@@ -1,5 +1,5 @@
 # Mini Google
-A small google assistant powered by JavaScript
+A small google assistant powered by JavaScript -Reboot13
 
 
 ## Mini Google
